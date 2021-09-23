@@ -1,0 +1,16 @@
+<app-encabezadodocente icono="home"></app-encabezadodocente>
+<ion-content>
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <ion-text color="primary">
+      <h1>Inicio</h1>
+    </ion-text>
+  
+    <ion-text color="primary">
+      <h3 *ngIf="usuario===''">Desconocido</h3>
+      <h3 *ngIf="usuario!==''">Bienvenido {{usuario}}</h3>
+    </ion-text>
+
+    <ion-img src="../assets/images/spyr.png" class="animate__animated animate__zoomIn animate__delay-1s"></ion-img>
+</ion-content>
+
+<app-footer></app-footer>

@@ -1,22 +1,22 @@
 import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { IonicModule } from '@ionic/angular';
 
+import { IniciodocentePageRoutingModule } from './iniciodocente-routing.module';
+
+import { IniciodocentePage } from './iniciodocente.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
+    IniciodocentePageRoutingModule,
     ComponentsModule
-
   ],
-  declarations: [HomePage]
+  declarations: [IniciodocentePage]
 })
-export class HomePageModule {}
+export class IniciodocentePageModule {}

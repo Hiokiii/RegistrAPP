@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>RegistrAPP</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <ion-text color="primary">
+      <h1>Inicio</h1>
+    </ion-text>
+  
+    <ion-text color="primary">
+      <h3 *ngIf="usuario===''">Desconocido</h3>
+      <h3 *ngIf="usuario!==''">Bienvenido {{usuario}}</h3>
+    </ion-text>
+
+    <ion-button>
+      <ion-icon slot="start" name="barcode-outline"></ion-icon>
+      Crear codigo QR
+    </ion-button>
+    
+    <ion-button routerLink="../home">
+      Cerrar Sesión
+      <ion-icon slot="start" name="power"></ion-icon>
+    </ion-button>
+    
+    
+</ion-content>

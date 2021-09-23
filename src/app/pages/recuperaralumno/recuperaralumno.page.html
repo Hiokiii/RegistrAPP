@@ -1,0 +1,17 @@
+<app-encabezado titulo="Recuperar" icono="open-outline"></app-encabezado>
+
+  <ion-content class="ion-padding">
+    <form #miformulario="ngForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input required type="text" name="usr" [(ngModel)]=usuario.username></ion-input>
+      </ion-item> 
+  
+      <ion-button type="submit" expand="block" [disabled]="miformulario.invalid">
+        Recuperar Contraseña
+      </ion-button>
+    </form>
+    
+  </ion-content>
+  
+  <app-footer></app-footer>

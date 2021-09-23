@@ -1,3 +1,57 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-menu side="start" menuId="menudocente" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title slot="secondary">Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-menu-toggle>
+        <ion-list lines="none" *ngFor="let item of opciones1" >
+    
+
+          <ion-item [routerLink]="item.link" detail>
+            <ion-icon slot="start" [name]="item.icono" color="dark"></ion-icon>
+              {{item.texto}}
+          </ion-item>
+    
+        </ion-list>
+      </ion-menu-toggle>
+    </ion-content>
+    <ion-footer>
+      <ion-title>
+        RegistrAPP ©
+      </ion-title>
+    </ion-footer>
+  </ion-menu>
+  
+
+  <!-- <ion-menu side="start" menuId="menualumno" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title slot="secondary">Menu2</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-menu-toggle>
+        <ion-list lines="none" *ngFor="let item of opciones2" >
+    
+
+          <ion-item [routerLink]="item.link" detail>
+            <ion-icon slot="start" [name]="item.icono" color="dark"></ion-icon>
+              {{item.texto}}
+          </ion-item>
+    
+        </ion-list>
+      </ion-menu-toggle>
+    </ion-content>
+    <ion-footer>
+      <ion-title>
+        Footer del menu
+      </ion-title>
+    </ion-footer>
+  </ion-menu> -->
+
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
