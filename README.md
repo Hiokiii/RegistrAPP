@@ -18,4 +18,4 @@ npm install @ionic-native/base64-to-gallery
 
 ionic cap sync
 
-Tambien cambiar los compile a implementacioens de los gradle (En dependencias)
+Tambien cambiar los compile a implementacioens de los gradle (En dependencias) En Android Studio
