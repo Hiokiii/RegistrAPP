@@ -1,5 +1,4 @@
 # RegistrAPP
-
 Animaciones:
 
 npm install animate.css --save
