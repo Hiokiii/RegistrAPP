@@ -6,10 +6,6 @@
     <param name="android-package" value="it.nexxa.base64ToGallery.Base64ToGallery"/>
   </feature>
 
-  <feature name="QRScanner">
-    <param name="android-package" value="com.bitpay.cordova.qrscanner.QRScanner"/>
-  </feature>
-
   <feature name="BarcodeScanner">
     <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner"/>
   </feature>

@@ -23,12 +23,26 @@ export class EscanearPage implements OnInit {
   scanCode(){
     this.barcodeScanner.scan().then(
       barcodeData => {
-        this.scannedCode = barcodeData;
-      }
-    )
+      console.log('Barcode data', barcodeData);
+      this.scannedCode = barcodeData.text;
+     }).catch(err => {
+         console.log('Error', err);
+     });
   }
 
   downloadQR(){
+    const canvas = document.querySelector('canvas') as HTMLCanvasElement;
+    const imageData = canvas.toDataURL('image/jpeg').toString();
+    console.log('data' , imageData);
 
+    let data = imageData.split(',')[1];
+    this.base64ToGallery.base64ToGallery(data, {prefix: '__img', mediaScanner: true})
+    .then(async res =>{
+      let toast =  await this.toastCtrl.create({
+        header: 'QR Code saved in your Photolibrary'
+      });
+      toast.present();
+    }, err => console.log('err: ', err)
+    );
   }
 }

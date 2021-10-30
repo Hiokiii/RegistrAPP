@@ -22,10 +22,23 @@
         <ion-icon slot="sta" name="qr_scanner"></ion-icon>
         Scan Code
     </ion-button>
-    <ngx-qrcode 
-        [elementType]="elementType" 
-        [value]="qrData">
-    </ngx-qrcode>
+
+    <ion-card>
+        <ngx-qrcode [elementType]="elementType" [value]="qrData">
+        </ngx-qrcode>
+        <ion-card-content>
+            <ion-button (click)="downloadQR()" expand="full" fill="clear" shape="round" *ngIf="elementType === 'canvas'">
+                <ion-icon slot="start" name="download"></ion-icon>
+                Download QR Code
+            </ion-button>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-content>
+            Result from Scan: {{ scannedCode }}
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>
 
