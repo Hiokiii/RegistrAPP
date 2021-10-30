@@ -2,7 +2,9 @@
 Animaciones:
 npm install animate.css --save
 (Añadir ---- al node module/animation...)
-Scanner
+
+
+Scanner:
 npm install @techiediaries/ngx-qrcode --save
 
 npm install phonegap-plugin-barcodescanner
