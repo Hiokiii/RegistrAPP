@@ -1,5 +1,8 @@
+import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Component, OnInit } from '@angular/core';
-import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
+import { ToastController } from '@ionic/angular';
+import { NgxQrcodeElementTypes } from '@techiediaries/ngx-qrcode';
 
 @Component({
   selector: 'app-escanear',
@@ -8,32 +11,24 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 })
 export class EscanearPage implements OnInit {
 
-  constructor(private qrScanner: QRScanner) { }
+  qrData:'https://experienciavivo.duoc.cl/';
+  scannedCode = null;
+  elementType: NgxQrcodeElementTypes.URL | NgxQrcodeElementTypes.CANVAS | NgxQrcodeElementTypes.IMG = NgxQrcodeElementTypes.CANVAS;
 
-  ngOnInit() {
-    this.qrScanner.prepare()
-  .then((status: QRScannerStatus) => {
-     if (status.authorized) {
-       // camera permission was granted
+  constructor(private barcodeScanner:BarcodeScanner, private base64ToGallery:Base64ToGallery,
+    private toastCtrl:ToastController) { }
 
+  ngOnInit() {}
 
-       // start scanning
-       let scanSub = this.qrScanner.scan().subscribe((text: string) => {
-         console.log('Scanned something', text);
-
-         this.qrScanner.hide(); // hide camera preview
-         scanSub.unsubscribe(); // stop scanning
-       });
-
-     } else if (status.denied) {
-       // camera permission was permanently denied
-       // you must use QRScanner.openSettings() method to guide the user to the settings page
-       // then they can grant the permission from there
-     } else {
-       // permission was denied, but not permanently. You can ask for permission again at a later time.
-     }
-  })
-  .catch((e: any) => console.log('Error is', e));
+  scanCode(){
+    this.barcodeScanner.scan().then(
+      barcodeData => {
+        this.scannedCode = barcodeData;
+      }
+    )
   }
 
+  downloadQR(){
+
+  }
 }

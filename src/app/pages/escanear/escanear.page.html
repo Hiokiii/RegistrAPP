@@ -1,4 +1,32 @@
 <app-encabezadodocente icono="barcode-outline"></app-encabezadodocente>
+<ion-content>
 
+    <ion-item>
+        <ion-input text="text" placeholder="MY QR Code data" [(ngModel)]="qrData">
+        </ion-input>
+    </ion-item>
+
+    <ion-segment [(ngModel)]="elementType">
+        <ion-segment-button value="canvas">
+            <ion-label>Canvas</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="img">
+            <ion-label>Image</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="url">
+            <ion-label>URL</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <ion-button (click)="scanCode()" expand="full" fill="clear" shape="round">
+        <ion-icon slot="sta" name="qr_scanner"></ion-icon>
+        Scan Code
+    </ion-button>
+    <ngx-qrcode 
+        [elementType]="elementType" 
+        [value]="qrData">
+    </ngx-qrcode>
+
+</ion-content>
 
 <app-footer></app-footer>

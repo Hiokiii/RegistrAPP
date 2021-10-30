@@ -9,13 +9,16 @@ import { EscanearPageRoutingModule } from './escanear-routing.module';
 
 import { EscanearPage } from './escanear.page';
 
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     EscanearPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    NgxQRCodeModule
   ],
   declarations: [EscanearPage]
 })
