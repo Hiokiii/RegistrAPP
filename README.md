@@ -2,7 +2,7 @@
 Animaciones:
 
 npm install animate.css --save
-(Añadir ---- al node module/animation...)
+(Añadir node_modules/animate.css/animate.min.css al [Styles] de angular.json)
 
 
 Scanner:
