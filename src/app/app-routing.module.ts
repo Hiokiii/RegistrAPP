@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'escanear',
     loadChildren: () => import('./pages/escanear/escanear.module').then( m => m.EscanearPageModule)
+  },
+  {
+    path: 'crearqr',
+    loadChildren: () => import('./pages/crearqr/crearqr.module').then( m => m.CrearqrPageModule)
   }
 ];
 

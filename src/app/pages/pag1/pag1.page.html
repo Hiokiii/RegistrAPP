@@ -4,6 +4,7 @@
   </ion-toolbar>
 
 </ion-header>
+
 <ion-content>
   <ion-content [fullscreen]="true" class="ion-padding">
     <ion-text color="primary">
@@ -15,7 +16,7 @@
       <h3 *ngIf="usuario!==''">Bienvenido {{usuario}}</h3>
     </ion-text>
 
-    <ion-button>
+    <ion-button routerLink="../crearqr">
       <ion-icon slot="start" name="barcode-outline"></ion-icon>
       Crear codigo QR
     </ion-button>
