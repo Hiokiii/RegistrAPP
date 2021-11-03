@@ -1,0 +1,30 @@
+<app-encabezado titulo="Registro"></app-encabezado>
+
+<ion-content class="ion-padding">
+  <ion-text color="primary">
+    <h1>Registro</h1>
+  </ion-text>
+  <form #formulario1="ngForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input type="text" required name="usr" id="username1" [(ngModel)]="usuario1.username1"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Correo Electronico</ion-label>
+      <ion-input type="text" required name="cre" id="correo1" [(ngModel)]="usuario1.correo1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" required name="psw" id="password1" [(ngModel)]="usuario1.password1"></ion-input>
+    </ion-item>
+    
+   <ion-button  expand="block" fill="clear" type="submit1" [disabled]="formulario1.invalid">
+      Registrarse
+    </ion-button>
+  </form>
+  
+</ion-content>
+
+<app-footer></app-footer>

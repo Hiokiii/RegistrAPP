@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'crearqr',
     loadChildren: () => import('./pages/crearqr/crearqr.module').then( m => m.CrearqrPageModule)
+  },
+  {
+    path: 'registroalumno',
+    loadChildren: () => import('./pages/registroalumno/registroalumno.module').then( m => m.RegistroalumnoPageModule)
   }
 ];
 

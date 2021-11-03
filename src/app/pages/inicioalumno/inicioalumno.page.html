@@ -11,6 +11,7 @@
       <ion-label  position="floating">Contraseña</ion-label>
       <ion-input  required type="password" name="psw" [(ngModel)]=usuario.password></ion-input>
     </ion-item>
+    
 
     <ion-button type="submit" expand="block" [disabled]="miformulario.invalid">
       Ingresar
@@ -19,6 +20,11 @@
     <ion-button expand="block" fill="clear" shape="round" routerLink="../recuperaralumno">
       Recuperar contraseña
     </ion-button>
+
+    <h6>
+    NO TIENES CUENTA? <ion-button shape="square" fill="clear" slot="end" routerLink="../registroalumno"><u>Registrate Aquí</u></ion-button>
+    </h6>
+  
   </form>
   
 </ion-content>

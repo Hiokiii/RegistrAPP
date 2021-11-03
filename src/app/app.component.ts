@@ -1,5 +1,6 @@
 import { Opmenu } from './interfaces/opmenu';
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-root',
@@ -24,22 +25,10 @@ export class AppComponent {
       icono:"power"
     } 
   ]
-  /* opciones2:Opmenu[]=[
-    {
-      link:"",
-      texto:"Inicio",
-      icono:"home"
-    },
-    {
-      link:"",
-      texto:"Asistencia en linea",
-      icono:"list"
-    },
-    {
-      link:"home",
-      texto:"Cerrar sesión",
-      icono:"power"
-    } 
-  ] */
-  constructor() {}
+
+  constructor(private storage:Storage) {}
+
+  async ngOnInit() {
+    await this.storage.create();
+  }
 }
