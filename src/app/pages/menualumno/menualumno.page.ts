@@ -11,10 +11,11 @@ export class MenualumnoPage implements OnInit {
   usuario:string='';
 
   constructor(private activeroute:ActivatedRoute, private router:Router) {
+    
     this.activeroute.queryParams.subscribe(
       params => {
       if (this.router.getCurrentNavigation().extras.state) {
-        this.usuario = this.router.getCurrentNavigation().extras.state.miusuario.username;
+        this.usuario = this.router.getCurrentNavigation().extras.state.miusuario.usuario1;
         console.log(this.usuario);
       }  
     });

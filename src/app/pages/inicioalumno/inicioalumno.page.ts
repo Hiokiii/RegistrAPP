@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Router, NavigationExtras } from '@angular/router';
+import { Usuario, Sesion } from '../../interfaces/usuario';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-inicioalumno',
@@ -9,33 +11,58 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 export class InicioalumnoPage implements OnInit {
 
-  usuario={
-    username:'',
-    password:''
-
+  usuario1:Usuario=
+  {
+    username1:'',
+    correo1:'',
+    password1:''
   }
 
-  constructor(private alertController:AlertController, private router:Router) { }
+  sesion:Sesion=
+  {
+    valor:0,
+    username:''
+  }
 
+  constructor(private alertController:AlertController, private router:Router, private storage:Storage) { }
+
+  
   ngOnInit() {
   }
 
   onSubmit(){
 
-    if(this.usuario.username==="Diego" && this.usuario.password=="duoc"){
-      //Ir al inicio
+    this.validarusuario(this.usuario1);
+    
+    //Ir al inicio
       //console.log(this.usuario.username + " " + this.usuario.password);
-      let navextras:NavigationExtras=
+      /* let navextras:NavigationExtras=
       {
         state: {miusuario:this.usuario}
+      } */
+       //this.router.navigate(['/menualumno'],navextras);
+  }
+
+  async validarusuario(u:Usuario)
+  {
+    let usuario1=await this.storage.get(u.username1);
+    if(usuario1!=null)
+    {
+      if(u.password1===usuario1.password1)
+      {
+        this.sesion.valor=1;
+        this.sesion.username=this.usuario1.username1;
+        await this.storage.set('sesion',this.sesion);
+        let navextras:NavigationExtras=
+        {
+          state: {miusuario:this.usuario1}
+        } 
+        this.router.navigate(['/menualumno'],navextras);
+        return
       }
-
-      this.router.navigate(['/menualumno'],navextras);
-
     }
-    else{
-      this.presentAlert();
-    }
+    this.presentAlert();
+    
   }
 
   async presentAlert() {

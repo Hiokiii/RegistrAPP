@@ -4,12 +4,12 @@
   <form class="animate__animated animate__fadeInUp" #miformulario="ngForm" (ngSubmit)="onSubmit()">
     <ion-item>
       <ion-label position="floating">Usuario</ion-label>
-      <ion-input  required type="text" name="usr" [(ngModel)]=usuario.username></ion-input>
+      <ion-input  required type="text" name="usr" [(ngModel)]=usuario1.username1></ion-input>
     </ion-item> 
     
     <ion-item>
       <ion-label  position="floating">Contraseña</ion-label>
-      <ion-input  required type="password" name="psw" [(ngModel)]=usuario.password></ion-input>
+      <ion-input  required type="password" name="psw" [(ngModel)]=usuario1.password1></ion-input>
     </ion-item>
     
 
@@ -22,7 +22,7 @@
     </ion-button>
 
     <h6>
-    NO TIENES CUENTA? <ion-button shape="square" fill="clear" slot="end" routerLink="../registroalumno"><u>Registrate Aquí</u></ion-button>
+      NO TIENES CUENTA? <ion-button shape="square" fill="clear" slot="end" routerLink="../registroalumno"><u>Registrate Aquí</u></ion-button>
     </h6>
   
   </form>

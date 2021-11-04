@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LogincontrolGuard } from './guards/logincontrol.guard';
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
   },
   {
     path: 'escanear',
-    loadChildren: () => import('./pages/escanear/escanear.module').then( m => m.EscanearPageModule)
+    loadChildren: () => import('./pages/escanear/escanear.module').then( m => m.EscanearPageModule),
+    canActivate:[LogincontrolGuard]
   },
   {
     path: 'crearqr',

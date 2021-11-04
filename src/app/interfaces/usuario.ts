@@ -1,6 +1,11 @@
 export interface Usuario {
-    username1:String;
-    password1:String;
-    correo1:String;
-    activo1:number;
+    username1:string;
+    password1:string;
+    correo1:string,
+}
+
+
+export interface Sesion {
+    valor:number,
+    username:string
 }
